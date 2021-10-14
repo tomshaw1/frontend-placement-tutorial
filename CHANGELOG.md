@@ -86,6 +86,10 @@ We have updated the Notify client library to version 5.1.0. This may break exist
 
 - [Pull request #1133: Remove express-writer from package file](https://github.com/alphagov/govuk-prototype-kit/pull/1133)
 
+## Fixes
+
+- [Pull request #1118: Fix code sample accessibility issues](https://github.com/alphagov/govuk-prototype-kit/pull/1118)
+
 # 9.15.0 (Feature release)
 
 ## New features
