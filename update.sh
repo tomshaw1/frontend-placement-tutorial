@@ -3,6 +3,8 @@
 # Use unofficial bash strict mode
 set -euo pipefail
 
+UPDATE_URL="${UPDATE_URL:-https://govuk-prototype-kit.herokuapp.com/docs/download}"
+
 msg () {
 	# shellcheck disable=SC2048,2086 # we want to expand words to allow -n flag
 	1>&2 echo $*
@@ -59,7 +61,7 @@ fetch () {
 
 	if ! ls govuk-prototype-kit*.zip > /dev/null 2>&1; then
 		msg 'Downloading latest version of GOV.UK Prototype Kit...'
-		curl -LJO https://govuk-prototype-kit.herokuapp.com/docs/download
+		curl -LJO "$UPDATE_URL"
 		msg 'Done'
 	fi
 
