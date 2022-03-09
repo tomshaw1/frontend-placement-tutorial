@@ -30,22 +30,21 @@
 {% from "govuk/components/tag/macro.njk"                 import govukTag %}
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
+{% from "hmrc/components/internal-header/macro.njk"      import hmrcInternalHeader %}
 
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  HMRC Frontend Placement Tutorial
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+  {{ hmrcInternalHeader({
+    homepageUrl: '/',
+    serviceName: 'Frontend Placement Tutorial',
+    serviceUrl: '#'
   }) }}
 {% endblock %}
 
