@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% from "../../includes/_codeSnippet.njk" import codeSnippet %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Test Driven Development</h1>
+
+      <h2 class="govuk-heading-l">What is TDD?</h2>
+      <p>Test Driven Development (TDD) is a process in which tests are written before any of the other code is written.</p>
+      <p>We do this at HMRC to ensure that the code meets the requirements of the tests and nothing extra that may not be relevant. It is important that we create patterns properly, so functionality is of high importance, and creating tests to ensure that the pattern is working as intended is a great way to do so.</p>
+      <p>It helps us to also keep the pattern within the scope it was initially defined as. More often than not, when programming, we tend to continue to add new features and design that may not necessarily be required. Creating tests first helps us to avoid <a href="https://en.wikipedia.org/wiki/Feature_creep" class="govuk-link">feature creep</a>.</p>
+
+      <h2 class="govuk-heading-l">What is Jest?</h2>
+      <p>Jest is a testing framework created and written in JavaScript, used as a part of HMRC’s tech stack.</p>
+      <p>A test case in Jest is made up as such:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Describe - this allows us to give a name to the test case, which helps us to identify it when the tests are run. </li>
+        <li>It - where we put our individual test statements. This can be something like ‘passes accessibility tests’. A test case can contain multiple ‘it’ statements.</li>
+        <li>Expect - where we write what the code should actually do. This is where we use Cheerio to target elements in our code and check  different things, such as the amount of items in a list. More on that later.</li>
+      </ul>
+      <p>Here's an example of what a simple test case may look like:</p>
+      
+      <img src="../public/images/text-example.png" alt="Jest test example">
+    </div>
+  </div>
+{% endblock %}

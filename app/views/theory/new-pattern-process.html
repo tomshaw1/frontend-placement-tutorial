@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-xl">New Pattern Process</h1>
+      <p>The process for the creation of a new pattern arises when the need for it is evident. This is often through service teams. If there is a gap in the design system where a service team might need to create a pattern of their own, Design Resources will work with them to get it added to the design system for all of HMRC to use.</p>
+      <p>HMRC Design Resources Working Group is a fortnightly meeting that consists of designers, developers and other related members of Digital that get together to discuss new additions and changes to the design system. If a need for a new pattern arises, the process will begin by someone giving a presentation in the working group, and following some discussion, it may be accepted to the backlog.</p>
+
+      <h2 class="govuk-heading-l">How does a pattern come about?</h2>
+      <p>User research is required before anything else. The service team who identified a need for a new pattern will have URs who will collect primary and secondary research, for example, how a different governmental department or service has solved this problem. Sometimes, we will get help from external URs to gather information.</p>
+      <p>From this point, Design Resources will work on a prototype. Designers will translate the user research data into design recommendations, and both designers and developers will work together to create a prototype. Often, these prototypes are not functional, and serve more as a way to present the design of the pattern. It’s also important to note that Design Resources may not work on the prototype, instead a designer from the related service team may create it.</p>
+      <p>This prototype will be shown at the working group to gather feedback and eventually get accepted. From this point, the frontend developers will work on the creation of the pattern, working from the prototype as a brief.</p>
+      <p>Finally, the finished pattern will be showcased by the developers to the working group for final feedback. At times, there may have been changes to the prototype based on development limitations, so these will have to be accepted. Once this is all agreed upon, the pattern will be added to the design system.</p>
+
+      <h2 class="govuk-heading-l">How are patterns used?</h2>
+      <p>Patterns are used by teams to build webpages for HMRC services. Think of them as building blocks that can be customised to work together and to fit the service.</p>
+      <p>Patterns are often built in a customizable way using Nunjucks. This means that service teams can add the pattern to a web page, and edit parts of it, for example, they can include the HMRC Internal Header, and edit the service name variable to reflect the name of their service.</p>
+
+      <p><a href="/theory/accessibility/wcag">Next (Accessibility: WCAG)</a></p>
+    </div>
+  </div>
+{% endblock %}
