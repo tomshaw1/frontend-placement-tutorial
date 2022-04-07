@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% from "../../includes/_codeSnippet.njk" import codeSnippet %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">YAML</h1>
+
+      <h2 class="govuk-heading-l">What is YAML?</h2>
+      <p>YAML is a data-serialisation language, used in HMRC to create and test several configurations of a component dynamically, so that we do not have to change the content of the actual code.</p>
+      <p> For example, we can have a list pattern, and use YAML to create an example with 1 item in the list, and with 20 items in the list.</p>
+      <p>Another key use of YAML is to create parameters for a component. This means that we can make the component more of a template, and the parameters we provide will allow service teams to customise certain aspects of the component.</p>
+      <h2 class="govuk-heading-l">YAML Example</h2>
+      <p>Below is an example of two YAML configurations:</p>
+      <img width="600" height="620" src="/public/images/yaml-example.png" alt="YAML code example">
+      <br><br>
+      <p>As shown above, there are two configurations, respectively named 'single-event' and 'multiple-event'. Indentation is used to group elements - 'events' is an object with one/two elements, and is the child of the 'data' element.</p>
+      <p>'single-event' creates an example with a single event, and all the data that is needed to populate said event, such as the title and date. 'multiple-event' is very similar, instead containing two events.</p>
+      <p>These different configurations can be used to visually check a component is showing different types of data properly, and can be used to create unit tests. This is an important step in the process of creating a component and is often done alongside the coding of the component itself.</p>
+
+
+      <p><a href="/theory/code/nunjucks">Next (Nunjucks)</a></p>
+    </div>
+  </div>
+{% endblock %}

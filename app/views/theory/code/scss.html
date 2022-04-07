@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">SCSS</h1>
+
+      <h2 class="govuk-heading-l">What is SCSS?</h2>
+      <p>Sass, or SCSS, is a preprocessor scripting language in place of regular CSS. This is used in HMRC for the features that it has over CSS, such as importing custom CSS files (commonly used to bring in GOVUK styling) and nested syntax.</p>
+      <p>For the most part, styling a component will feel very similar to using CSS, however, there are some quality of life additions to make your code more readable and efficient.</p>
+
+      <h2 class="govuk-heading-l">SCSS Examples</h2>
+      <p>Below is an example of some SCSS code:</p>
+      <img width="600" height="550" src="/public/images/scss-example.png" alt="SCSS code example">
+      <br><br>
+      <p>The example above has multiple examples of how SCSS provides useful functionality over regular CSS. Firstly, the '$border-width' is an example of using variables in CSS. This can remove some duplication of code and improve its readability.</p>
+      <p>As you can see the, there are selectors within selectors. SCSS allows for indentation, which helps to organise code into appropriate groups, making it easier to  make quick changes to different elements of the component.</p>
+      <p>Finally, the '&__event' is an example of using the parent selector '&', which is a shorthand for the parent. This is effectively writing '.hmrc-timeline__event' - when it comes to long class names, this can really improve the way code is read.</p>
+
+
+
+
+      <p><a href="/code/testing">Next Section</a></p>
+    </div>    
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-xl">Nunjucks</h1>
+
+      <h2 class="govuk-heading-l">What is Nunjucks?</h2>
+      <p>Nunjucks is a templating language that allows us to dynamically create HTML on the web. This is how to display the content on the page in a way that can be configured for use across HMRC in different ways.</p>
+      <p>For example, we can use a for loop to add rows to a table based on the amount of content we have to add, rather than creating a table statically that has empty cells or holds old information.</p>
+
+      <h2 class="govuk-heading-l">Nunjucks example</h2>
+      <p>Below is an example snippet of some Nunjucks code:</p>
+      <img width="600" src="/public/images/nunjucks-example.png" alt="Nunjucks code example">
+      <br><br>
+      <p>Nunjucks code is clearly defined by it's syntax, (syntax). As this is only a snippet, there is no example of closing Nunjucks tabs, this is done with (endif syntax), (endfor syntax), (endblock syntax) e.g.</p>
+      <p>The first line is an if statement to first check before anything is displayed, if there are any events to display. If there are none, the component will not show. If there is at least one, an ordered list is created, and the following line iterates through all the events and creates a list item out of them.</p>
+      
+      <p><a href="/theory/code/scss">Next (SCSS)</a></p>
+    </div>    
+  </div>
+{% endblock %}
