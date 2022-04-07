@@ -1,0 +1,29 @@
+code:not(.hljs) {
+    padding: 0 5px;
+    overflow-x: auto;
+    color: #d14;
+    background: #f8f8f8;
+  }
+  
+  .app-code-snippet {
+    max-width: 100%;
+    position: relative;
+  
+    pre {
+      max-width: 100%;
+      padding: govuk-spacing(3);
+  
+      > code {
+        white-space: pre-wrap;
+        color: $black;
+        padding: 0;
+      }
+    }
+  
+    &.app-code-snippet--copy {
+      pre {
+        padding-top: 50px;
+        min-height: 25px;
+      }
+    }
+  }

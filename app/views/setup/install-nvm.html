@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% from "../includes/_codeSnippet.njk" import codeSnippet %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-xl">Using Node and NPM</h1>
+
+			<p>We use Node for a couple of reasons - it allows us to write Javascript code for the server, which means we can make more persistent additions to websites by saving data to the server.</p>
+
+			<p>However, the more commonly interacted with feature of Node is npm or Node Package Manager, which is a way to share and incorporate other people’s code into our projects, bundled as packages.</p>
+			<p>This is a really powerful tool, as we can rely on packages to handle components of a website that may be more challenging, or time consuming to add ourselves. Things like build processes, linting and style helpers can be included to improve workflow.</p>
+
+			<p>We also publish our own npm package. To add hmrc-frontend to any project, simply use the following code:</p>
+
+      {{
+        codeSnippet({
+          code: 'npm install hmrc-frontend'
+        })
+      }}
+
+			<h2 class="govuk-heading-l">How to install Node</h2>
+      <p>To use this functionality, we'll need to install Node. You can just do this by going to <a href="https://nodejs.org/en/" class="govuk-link">the Node website</a>, however it is better to install through NVM.</p>
+      <p>NVM is an open source tool that can be used to install Node, which allows you to change between Node versions with a simple terminal command rather than installing and reinstalling other versions. To do this, follow the instructions on the <a href="https://github.com/nvm-sh/nvm#installing-and-updating" class="govuk-link">NVM GitHub page</a> to get up and running.
+    </div>
+	</div>
+
+  <p><a href="/theory/new-pattern-process">Next Section</a></p>
+{% endblock %}

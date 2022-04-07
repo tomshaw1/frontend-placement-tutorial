@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "../includes/_codeSnippet.njk" import codeSnippet %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -20,8 +21,21 @@
         cheatsheet</a> and hang it above your desk!</p>
 
       <h2 class="govuk-heading-l">Get started</h2>
-      <p>You should clone HMRC's Design System and HMRC Frontend. You could do this through GitHub Desktop, or try the
+      <p>You should clone HMRC's Design System and HMRC Frontend, as in the future you will make changes to cloned versions of these repositories, in order to merge them using GitHub. More on that later. You could do this through GitHub Desktop, or try the
       command line:</p>
 
+      {{
+        codeSnippet({
+          code: 'git clone https://github.com/hmrc/design-system.git'
+        })
+      }}
+
+      {{
+        codeSnippet({
+          code: 'git clone https://github.com/hmrc/hmrc-frontend.git'
+        })
+      }}
+
+      <p><a href="/setup/install-nvm">Next (Installing Node)</a></p>
       
     {% endblock %}
