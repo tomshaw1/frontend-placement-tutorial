@@ -1,5 +1,24 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Theory (code)",
+        href: "/theory"
+      },
+      {
+        text: "YAML",
+        href: "/theory/code/yaml"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% from "../../includes/_codeSnippet.njk" import codeSnippet %}
 
 {% block content %}

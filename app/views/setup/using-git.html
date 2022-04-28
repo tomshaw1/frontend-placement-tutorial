@@ -1,6 +1,25 @@
 {% extends "layout.html" %}
 {% from "../includes/_codeSnippet.njk" import codeSnippet %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Setup",
+        href: "/setup"
+      },
+      {
+        text: "Using Git",
+        href: "/setup/using-git"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

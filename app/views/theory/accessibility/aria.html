@@ -1,5 +1,24 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Theory (a11y)",
+        href: "/theory"
+      },
+      {
+        text: "ARIA",
+        href: "/theory/accessibility/aria"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

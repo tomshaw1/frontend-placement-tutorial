@@ -1,5 +1,24 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Theory (code)",
+        href: "/theory"
+      },
+      {
+        text: "Test Driven Development",
+        href: "/theory/code/tdd"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% from "../../includes/_codeSnippet.njk" import codeSnippet %}
 
 {% block content %}
@@ -18,7 +37,7 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>Describe - this allows us to give a name to the test case, which helps us to identify it when the tests are run. </li>
         <li>It - where we put our individual test statements. This can be something like ‘passes accessibility tests’. A test case can contain multiple ‘it’ statements.</li>
-        <li>Expect - where we write what the code should actually do. This is where we use Cheerio to target elements in our code and check  different things, such as the amount of items in a list. More on that later.</li>
+        <li>Expect - where we write what the code should actually do. This is where we use <a href="https://cheerio.js.org/">Cheerio</a> to target elements in our code and check  different things, such as the amount of items in a list. More on that later.</li>
       </ul>
       <p>Here's an example of what a simple test case may look like:</p>
       
