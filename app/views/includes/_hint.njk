@@ -1,0 +1,8 @@
+{% macro hint(params) %}
+  {% if params.hintText %}
+    <p>Hint: <span id='hint' style='display: none; color: green;'>{{- params.hintText | safe -}}</span></p>
+
+    <button id='button' onClick="function reveal(){document.getElementById('hint').style.display = 'inline-block'; document.getElementById('button').style.display = 'none';}reveal()">Reveal</button>
+    <br><br>
+  {% endif %}
+{% endmacro %}

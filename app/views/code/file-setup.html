@@ -7,14 +7,15 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">File setup</h1>
 
-      <p>For this tutorial, we will be recreating an already live component known as <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/currency-input/">Currency Input</a>. This component gives context to the user that the number they will be typing in is a monetary amount, ensuring they are aware in the case that they will be paying for something online. This is how Currency Input looks:</p>
-      <img width="300" src="/public/images/currency-input.png" alt="Image of Currency Input component">
+      <p>For this tutorial, we will be recreating an already live component known as <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/timeline/">Timeline</a>. This component is a handy visual that can provide the user with a clearly defined timeline, which could be used to show different dates of payment, or dates in which a HMRC process will be completed in stages. This is how Timeline looks:</p>
+      <img width="700" src="/public/images/timeline.png" alt="Image of Timeline component">
+      <br><br>
 
       <p>To start this tutorial, we will first need to set up our work environment, creating some folders and files that we can work in.</p>
       <br>
 
       <ul class="govuk-list govuk-list--number">
-        <li>Open your terminal, and navigate to the hmrc-frontend GitHub repository that we cloned earlier. You can do this with the <em>cd</em> terminal command.</li>
+        <li>Open your terminal, and navigate to the hmrc-frontend GitHub repository that we cloned earlier. You can do this with the <em>cd</em> terminal command, followed by the filepath.</li>
         <li>Next, create a branch of hmrc-frontend. This is a version of the repository that you can make changes to and it will not affect the main version. You should give this a suitable name, such as <em>'yourname-placement-tutorial'</em>. The following command may help:</li>
         {{
           codeSnippet({
@@ -22,7 +23,7 @@
           })
         }}
         <li>This will create the branch with that name, and automatically move you on to it. Now we can type the following command to open our workspace.</li>
-                {{
+        {{
           codeSnippet({
             code: 'code .'
           })
@@ -36,9 +37,17 @@
             <li>macro.njk</li>
             <li>_tutorial-component.scss</li>
           </ul>
+        <li>Finally, add the changes made to the branch. This can be done with the following commands:</li>
+        {{
+          codeSnippet({
+            code: 'git add --all
+git commit -m "Initial file set up"
+git push'
+          })
+        }}
       </ul>
 
-      <p>This is all the set up we will need. In the next section, we can move on to creating our component, beginning with writing some tests to cover all aspects of Currency Input.</p>
+      <p>This is all the set up we will need. In the next section, we can move on to creating our component, beginning with writing some tests to cover all aspects of Timeline.</p>
 
       <p><a href="/code/testing">Next (Creating timeline.test.js)</a></p>
     </div>    
