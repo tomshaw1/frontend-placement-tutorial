@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "SCSS",
+        href: "/code/scss"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
+{% from "../includes/_codeSnippet.njk" import codeSnippet %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Adding Styles</h1>
+      
+      <p>Now that we have written the Nunjucks, you should be able to open your local hmrc-frontend with npm start and see something on each example of the tutorial component. The only problem is it looks very basic. We'll need to add classes (using the <a href="https://css-tricks.com/bem-101/">BEM methodology</a>) to the template document, and target those with some styles using SCSS.</p>
+      <p>To each element, add the following classes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>The &lt;ol&gt; element should have the class "hmrc-timeline"</li>
+        <li>the &lt;li&gt; element should have the class "hmrc-timeline__event"</li>
+        <li>The header should have the class "hmrc-timeline__event-title</li>
+        <li>The &lt;time&gt; element should have the class "hmrc-timeline__event-meta</li>
+        <li>The content &lt;div&gt; should have the class "hmrc-timeline__event-content</li>
+      </ul>
+
+      <p>Once these classes have been added, you should copy the below styles into your _tutorial-component.scss file:</p>
+
+      {{
+        codeSnippet({
+          code: '@import "../../../../govuk-frontend/govuk/core/typography";
+
+.hmrc-timeline {
+  $border-width: 5px;
+
+  border-left: $border-width solid govuk-colour("blue");
+  margin: 0;
+  margin-bottom: govuk-spacing(6);
+  padding: 0;
+
+  &__event {
+    @include govuk-responsive-padding(6, "bottom");
+
+    padding-left: govuk-spacing(4) - $border-width;
+    position: relative;
+    list-style: none;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__event-title {
+    @include govuk-responsive-margin(1, "bottom");
+
+    @extend %govuk-heading-m;
+
+    &::before {
+      background-color: govuk-colour("blue");
+      content: "";
+      height: $border-width;
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: (govuk-spacing(4) * 0.6) - $border-width;
+    }
+  }
+
+  &__event-meta {
+    @include govuk-font($size: 19);
+    @include govuk-text-colour;
+    @include govuk-responsive-margin(3, "bottom");
+
+    display: block;
+  }
+}'
+        })
+      }}
+
+      <p>If everything has gone well, you should be able to see in your local hmrc-frontend that the Timeline looks the same as the real component! Congratulations, you have walked through this tutorial and hopefully learned a few things about how the hmrc-frontend stack works. Next, we'll do some developer checks on the component, such as browser compatability.</p>
+      
+      <p><a href="/code/checks">Next (Final checks)</a></p>
+    </div>    
+  </div>
+{% endblock %}
