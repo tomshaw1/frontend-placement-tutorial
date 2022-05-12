@@ -20,7 +20,6 @@
 {% endblock %}
 
 {% from "../includes/_codeSnippet.njk" import codeSnippet %}
-{% from "../includes/_hint.njk" import hint %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -29,7 +28,7 @@
 
       <p>Another important attribute of a HMRC component is the YAML configurations. We use YAML to set parameters for a component; this means that we can make them customisable, rather than being statically written up, we give service teams more freedom to make components fit for their specific service.</p>
       <p>Below is the first of two required YAML items, 'params'. You should add this to your tutorial-component.yaml file.</p>
-      <img width="700" src="/public/images/yaml-code-start.png" alt="Code snippet of Timeline component tests">
+      <img width="700" src="/public/images/yaml-code-start.png" alt="Code snippet of Timeline YAML configuration">
       <br>
       <p>To provide some context to this code, this is the params item. This has two children, events (an array) and headingLevel (an integer). In terms of the structure of the code, YAML uses white space indentation to distinguish parent and child nesting, and the '-' is used for an item.</p>
       <p>The 'events' has its own 'params' item. This is because each event has a multitude of required items, like a title, the date, and description of the event. In the application of this component, the developer will fill the events array with objects containing all the relevant information for each event, and the timeline will populate using this data.</p>

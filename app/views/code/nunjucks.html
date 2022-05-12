@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "Writing nunjucks",
+        href: "/code/nunjucks"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
+{% from "../includes/_codeSnippet.njk" import codeSnippet %}
+{% from "../includes/_hint.njk" import hint %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Writing Nunjucks templates</h1>
+
+      <p>Now we have written some tests in a test-driven manner (before any actual component code) and created some configurations for required parameters and examples for testing. Now we can begin actually putting content onto the page. From what we know, Nunjucks is a templating language for HTML, and as such we can use this to create a dynamic component like the timeline. To start, copy this code into your macro.njk:</p>
+
+      <img width="350" src="/public/images/macro-code-start.png" alt="Code for macro.njk">
+      <br><br>
+
+      <p>This is all the code we need for the macro. What this does is allow us to create the actual timeline template in a different file, and create a macro of it by importing it into a macro. Developers using hmrc-frontend can call the macro, populating the required attributes, which will then display the timeline with that information.</p>
+
+      <h2 class="govuk-heading-l">Writing template.njk</h2>
+      <p>Time to work on the template. At its core, the timeline is simply an ordered list, with each list item containing: a header element, a time element, and a div to place the content.</p>
+      <p>We will need some of Nunjucks' dynamic templating tools. The first line of code should be a check if the number of events not 0. This is so that if the timeline is instanced without any events, it will not create an empty timeline and instead display nothing. The other piece of logic required is a for loop, to iterate through the amount of events in order to make a list item for each.</p>
+      
+      <p>You should use the <a href="https://mozilla.github.io/nunjucks/templating.html">Nunjucks documentation</a> to help you, and refer to the real <a href="https://github.com/hmrc/hmrc-frontend/blob/main/src/components/timeline/template.njk">Timeline template.njk</a> for support.</p>
+
+      {{
+        hint({
+          hintText: 'The HTML elements you will require are <strong>&lt;ol&gt;</strong>, <strong>&lt;li&gt;</strong>, <strong>&lt;time&gt;</strong>, and <strong>&lt;div&gt;</strong>. The nunjucks tools you will need are <strong>{% if %}</strong>, <strong>{% for %}</strong>, <strong>{{ | length }}</strong>, <strong>{{ | safe }}</strong>, <strong>{{ | trim }}</strong>.'
+        })
+      }}
+
+      <p><a href="/code/scss">Next (Adding styles)</a></p>
+    </div>    
+  </div>
+{% endblock %}
