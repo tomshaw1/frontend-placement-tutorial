@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "YAML",
+        href: "/code/yaml"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
+{% from "../includes/_codeSnippet.njk" import codeSnippet %}
+{% from "../includes/_hint.njk" import hint %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Writing YAML</h1>
+
+      <p>Another important attribute of a HMRC component is the YAML configurations. We use YAML to set parameters for a component; this means that we can make them customisable, rather than being statically written up, we give service teams more freedom to make components fit for their specific service.</p>
+      <p>Below is the first of two required YAML items, 'params'. You should add this to your tutorial-component.yaml file.</p>
+      <img width="700" src="/public/images/yaml-code-start.png" alt="Code snippet of Timeline component tests">
+      <br>
+      <p>To provide some context to this code, this is the params item. This has two children, events (an array) and headingLevel (an integer). In terms of the structure of the code, YAML uses white space indentation to distinguish parent and child nesting, and the '-' is used for an item.</p>
+      <p>The 'events' has its own 'params' item. This is because each event has a multitude of required items, like a title, the date, and description of the event. In the application of this component, the developer will fill the events array with objects containing all the relevant information for each event, and the timeline will populate using this data.</p>
+      <p>The 'headingLevel' is an integer used to provide more customisation to the timeline. The user can set this to customise what heading type is used, for example h1, h2, h3.</p>
+
+      <h2 class="govuk-heading-l">Writing the examples </h2>
+      <p>Your job is to try and write the second and final main item required for our yaml file, 'examples'. You may recognise this from the tests; we will make items such as 'default', 'single-event' for use in testing. Following the syntax and structure of the above item, you can put this together with the following information:</p>
+      <p>Required items:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>default</li>
+        <li>custom-header-level</li>
+        <li>no-datetime-event</li>
+        <li>single-event</li>
+        <li>mulitple-events</li>
+      </ul>
+
+      <p>Required key-value pairs in each item:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>title - for this attribute, write an appropriate title (not a string)</li>
+        <li>description - for this attribute, write an appropriate description of the example (not a string)</li>
+        <li>data - this will be an array to contain the required info for an event. Each event will be defined by it's title, which is a string</li>
+        <li>each event will require a time, which is a string containing a human readable date (i.e '15 July 2020')</li>
+        <li>each event will require content, which is a string containing html <br> (i.e '&lt;p class=&quot;govuk-body&quot;&gt;singleExampleContent1&lt;/p&gt;')</li>
+      </ul>
+
+      <p>Try and write up the remainder of this code. If you are having trouble, you can see the <a href="https://github.com/hmrc/hmrc-frontend/blob/main/src/components/timeline/timeline.yaml">real Timeline YAML file</a> for help. Once you have completed it, running npm start in your terminal will open hmrc-frontend in your browser. Scrolling down to your Tutorial Component, you should see corresponding links for each of the examples you made!</p>
+
+      <p><a href="/code/nunjucks">Next (Creating template.njk and macro.njk)</a></p>
+    </div>    
+  </div>
+{% endblock %}      

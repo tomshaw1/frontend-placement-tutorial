@@ -1,5 +1,24 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "File Setup",
+        href: "/code/file-setup"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% from "../includes/_codeSnippet.njk" import codeSnippet %}
 
 {% block content %}
@@ -7,7 +26,7 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">File setup</h1>
 
-      <p>For this tutorial, we will be recreating an already live component known as <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/timeline/">Timeline</a>. This component is a handy visual that can provide the user with a clearly defined timeline, which could be used to show different dates of payment, or dates in which a HMRC process will be completed in stages. This is how Timeline looks:</p>
+      <p>For this tutorial, we will be recreating an already live component known as <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/timeline/">Timeline</a>. This component is a handy visual that can provide the user with a clearly defined timeline, which could be used to show different dates of payment, or dates in which a HMRC process will be completed in stages. Most of the code is provided for you, and you will be tasked with trying to write a section yourself, provided with some hints and reference to the real component code. The styling has also been fully provided. This is how Timeline looks:</p>
       <img width="700" src="/public/images/timeline.png" alt="Image of Timeline component">
       <br><br>
 

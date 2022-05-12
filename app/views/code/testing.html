@@ -1,22 +1,41 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "Writing tests",
+        href: "/code/testing"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
 {% from "../includes/_codeSnippet.njk" import codeSnippet %}
 {% from "../includes/_hint.njk" import hint %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Template.test.js</h1>
+      <h1 class="govuk-heading-xl">Writing Jest tests</h1>
 
-      <p>Now we can get a feel for writing tests. As this is the first code you will be writing, we will write just a few test cases, and you can use the real component's test file to add the remainder of the code.</p>
+      <p>Now we can get a feel for writing tests. As this is the first code you will be writing, we will only put together one main test case, and you can use the real component's test file to add the remainder of the code.</p>
 
       <p>Here are the first few lines for you to write to get started:</p>
       <img width="600" src="/public/images/test-code-start.png" alt="Code snippet of Timeline component tests">
       <br>
 
       <p>You should add the above code snippet into your 'test.template.js' file.</p>
-      <p>To walk through this, the first line is pulling in code from a different file that provides helpers. In particular here, we are adding render and getExamples to our test file, which are vital to targeting the component.</p>
-      <p>We then set the 'examples' variable using the getExamples function. This will reference our yaml file so that the tests can target different configurations of the component, such as a default configuration, a configuration with one item, or a configuration with multiple items.</p>
+      <p>To walk through this, the first line is pulling in code from a different file that provides helpers. In particular here, we are adding render and getExamples to our test file, which are vital to help us target the component.</p>
+      <p>We then set the 'examples' variable using the getExamples function. This will reference our YAML file so that the tests can target different configurations of the component, such as a default configuration, a configuration with one item, or a configuration with multiple items.</p>
       <p>Now on to the <a href="https://jestjs.io/">Jest</a> code. We have an overarching 'describe' called Timeline which we will use as a container for all of our test cases. The next describe is the first real case, the default. We create some variables with the $ convention that is used by <a href="https://cheerio.js.org/">Cheerio</a>. The 'it' line is the test itself, which is then checked with 'expect' and the corresponding code.</p>
 
       <h2 class="govuk-heading-l">Writing the next case</h2>
@@ -30,7 +49,7 @@ const $heading = $('.hmrc-timeline__event-title');
 const $time = $('.hmrc-timeline__event-meta');"
         })
       }}
-      <p>This creates a '$' variable which is a rendered version of the single-event configuration we will build in yaml. The other variables are all elements that should be in the component.</p>
+      <p>This creates a '$' variable which is a rendered version of the single-event configuration we will build in YAML. The other variables are all elements that should be in the component.</p>
       <br>
       <p>Now all that's left to complete this test case is to add the tests themselves, which as you know are defined by the 'it' keyword. For each of the following tests, create an 'it' statement and write an appropriate test.</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -48,7 +67,7 @@ const $time = $('.hmrc-timeline__event-meta');"
         })
       }}
 
-      <p>Once you've managed to write this up (you could have your line manager check this), copy the remainder of the test file from <a href="https://github.com/hmrc/hmrc-frontend/blob/main/src/components/timeline/template.test.js">the real Timeline tests</a>. Then it's time to move on to writing some yaml configurations!</p>
+      <p>Once you've managed to write this up (you could have your line manager check this), copy the remainder of the test file from <a href="https://github.com/hmrc/hmrc-frontend/blob/main/src/components/timeline/template.test.js">the real Timeline tests</a>. Then it's time to move on to writing some YAML configurations!</p>
 
       <p><a href="/code/yaml">Next (Creating tutorial-component.yaml)</a></p>
     </div>    
