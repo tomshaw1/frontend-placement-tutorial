@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "Home",
+	      href: "/"
+	    },
+      {
+        text: "Code",
+        href: "/code"
+      },
+      {
+        text: "Final checks",
+        href: "/code/checks"
+      }
+	  ]
+	}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Final Checks</h1>
+
+      <p>Now you should have a Timeline component up and running, but it's important to do a few final checks before you can call it complete. Let's go over browser compatability, responsiveness, and some edge case testing.</p>
+
+      <h2 class="govuk-heading-m">Responsiveness</h2>
+      <p>Firstly, let's look at responsiveness. This is essentially the concept that the web should respond to the user's behaviour and environment. A very clear example of this is if a user is on a website on their laptop, and they minimise the web page down to a much smaller window - is the text still visible or has it disappeared off the screen? This is just one case, and there are a multitude of things that could break at different screen sizes if not accounted for.</p>
+      <p>Open the Timeline component you have made and try dropping the window down to a much smaller width. Can you still interact with it in the way you would expect? The next major check for responsiveness is to go to your browser's DevTools, then open Responsive Mode. Most browsers will give you the ability to change to different mobile views; try some of these out, and ensure that the Timeline can be used at any and all of these.</p>
+    
+      <h2 class="govuk-heading-m">Browser Compatability</h2>
+      <p>Another big consideration we need to make is browser compatability. This is ensuring that the component works on all the browsers that we support. A list of these can be found <a href="https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices">here.</a></p>
+      <p>The easiest way to test this is to actually use them! Install Chrome, Firefox, and Edge (you should already have Safari if you are using a Mac) and open localhost:3000 on each of them, trying out the component you made. Does everything work the same, or in an expected way? Do some responsiveness checks on each as well, just to ensure that the experience with using the component will be the same, or functional, for everyone.</p>
+
+      <h2 class="govuk-heading-m">Edge Cases</h2>
+      <p>You should also try out some edge cases for the Timeline. An edge case is an extremely rare situation, that while it may not occur often or at all, it needs to be accounted for. A good example of this is the timeline component having 20 items - ordinarily this wouldn't happen as it's unlikely the customer will have a journey with 20 steps without it being simplified, but this still needs to be checked.</p>
+      <p>Create a new yaml example which has 20 items in it. Open this up in your local version of hmrc-frontend and check how it looks. Does it work as expected or are there problems with having too many items?</p>
+
+      <br><br><br>
+      <p>Overall, these are all things you'll need to consider and fix before a component could be made public. If you came across any problems, have a go at troubleshooting them, otherwise congratulations! This is the end of the tutorial.</p>
+    </div>    
+  </div>
+{% endblock %}
